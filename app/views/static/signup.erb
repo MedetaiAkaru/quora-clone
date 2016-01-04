@@ -1,0 +1,19 @@
+
+<% if logged_in? then %><%= session["email"]%><form method=post action=/logout><input type=submit value="LOgout"></form>
+<% end %>
+
+<h2>Sign up for an account!</h2>
+<form method=post action=/signup>
+    <input type=text placeholder="Email" name="user[email]"><br>
+    <input type=password placeholder="Password" name="user[password]"></br>
+    <input type=submit value="Sign up">
+</form>
+
+<% if !logged_in? then %>
+<h2>Login</h2>
+<form method=post action=/login>
+    <input type=text placeholder="Email" name="user[email]"><br>
+    <input type=password placeholder="Password" name="user[password]"></br>
+    <input type=submit value="Login">
+</form>
+<% end %>
